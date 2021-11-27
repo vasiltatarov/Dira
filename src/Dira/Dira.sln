@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dira", "Dira.csproj", "{BA6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dira.Data", "..\Dira.Data\Dira.Data.csproj", "{78EF7FC3-E616-46AE-BD25-EB757A74DF8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dira.Services", "..\Dira.Services\Dira.Services.csproj", "{EBDE5926-A4BC-43CE-B094-B1FCDD2EFF27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dira.ViewModels", "..\Dira.ViewModels\Dira.ViewModels.csproj", "{51A4731E-E615-4EC8-8842-824393FC9E9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{78EF7FC3-E616-46AE-BD25-EB757A74DF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78EF7FC3-E616-46AE-BD25-EB757A74DF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78EF7FC3-E616-46AE-BD25-EB757A74DF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDE5926-A4BC-43CE-B094-B1FCDD2EFF27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDE5926-A4BC-43CE-B094-B1FCDD2EFF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDE5926-A4BC-43CE-B094-B1FCDD2EFF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDE5926-A4BC-43CE-B094-B1FCDD2EFF27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A4731E-E615-4EC8-8842-824393FC9E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A4731E-E615-4EC8-8842-824393FC9E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A4731E-E615-4EC8-8842-824393FC9E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A4731E-E615-4EC8-8842-824393FC9E9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
