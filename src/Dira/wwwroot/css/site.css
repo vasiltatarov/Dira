@@ -21,3 +21,11 @@ body {
     border: 1px solid;
     background-color: aliceblue;
 }
+
+img.card-height {
+    height: 200px;
+}
+
+img.card-border {
+    border: 1px solid;
+}

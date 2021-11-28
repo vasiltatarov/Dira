@@ -7,5 +7,5 @@ public class DiraDbContext : IdentityDbContext
     {
     }
 
-    public DbSet<Test> Tests { get; set; }
+    public DbSet<Category> Categories { get; set; }
 }
