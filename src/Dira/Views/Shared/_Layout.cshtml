@@ -23,13 +23,22 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a id="home_nav" class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
-                                <i class="fas fa-home"></i> Home
+                                <i class="fas fa-home"></i> Начало
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="privacy_nav" class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a id="privacy_nav" class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <i class="fas fa-user-shield"></i> Политика
+                            </a>
                         </li>
+                        <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-secondary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
                     </ul>
+
                     <partial name="_LoginPartial" />
                 </div>
             </div>
@@ -40,9 +49,12 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        @for (int i = 0; i < 10; i++)
+        {
+            <br />
+        }
     </div>
 
-    <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -159,7 +171,6 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <!-- Footer -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
