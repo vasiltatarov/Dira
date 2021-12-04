@@ -19,6 +19,8 @@ builder.Services
     .AddEntityFrameworkStores<DiraDbContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddTransient<ICategoryService, CategoryService>();
+
 var app = builder.Build();
 
 app.PrepareDatabase();

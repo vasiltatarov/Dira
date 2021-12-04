@@ -6,5 +6,5 @@ public class IndexViewModel
 
     public string Description { get; set; }
 
-    public ICollection<CategoryViewModel> Categories { get; set; }
+    public IEnumerable<CategoryViewModel> Categories { get; set; }
 }

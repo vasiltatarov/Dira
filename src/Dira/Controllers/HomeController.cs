@@ -2,24 +2,16 @@
 
 public class HomeController : Controller
 {
-    private readonly DiraDbContext dbContext;
+    private readonly ICategoryService categoryService;
 
-    public HomeController(DiraDbContext dbContext)
+    public HomeController(ICategoryService categoryService)
     {
-        this.dbContext = dbContext;
+        this.categoryService = categoryService;
     }
 
     public IActionResult Index()
     {
-        var categories = this.dbContext
-            .Categories
-            .Where(x => !x.IsDeleted && x.ParentCategory == null)
-            .Select(x => new CategoryViewModel
-            {
-                Name = x.Name,
-                ImageUrl = x.ImageUrl,
-            })
-            .ToList();
+        var categories = this.categoryService.GetCategories();
 
         var model = new IndexViewModel
         {

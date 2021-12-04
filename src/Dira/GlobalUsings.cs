@@ -9,3 +9,4 @@ global using Dira.Data.Models;
 global using Dira.Infrastructure;
 global using Dira.ViewModels;
 global using Dira.ViewModels.Home;
+global using Dira.Services.Categories;
