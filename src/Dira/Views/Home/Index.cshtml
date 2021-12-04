@@ -15,7 +15,9 @@
             <div class="card">
                 <img src="@item.ImageUrl" class="card-img-top card-height card-border p-2" alt="@item.ImageUrl">
                 <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
+                    <h5 class="card-title">
+                        <a asp-action="" asp-controller="">@item.Name</a>
+                    </h5>
                 </div>
             </div>
         </div>

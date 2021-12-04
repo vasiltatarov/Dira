@@ -12,6 +12,10 @@ public class CategoriesSeeder
             new Category { Name = "Телевизори", ImageUrl = "https://s13emagst.akamaized.net/products/23325/23324306/images/res_217574d216836bc0a635405bae692dcf.jpg?width=720&height=720&hash=446E096C880A5E8C5C97BADB64645FAA"},
             new Category { Name = "Монитори", ImageUrl = "https://p1.akcdn.net/full/558094131.dell-u4919dw.jpg"},
             new Category { Name = "Лаптопи и компютри", ImageUrl = "https://cdncloudcart.com/402/files/image/6-5f2157f737dcc.jpg"},
+            new Category { Name = "Игри", ImageUrl = "https://cdn.igrifree.com/files/image/1604239426.png"},
+            new Category { Name = "Пъзели", ImageUrl = "https://nastola.bg/wp-content/uploads/2020/12/1-svobodni-zavinagi-bulgarski-puzel.jpg"},
+            new Category { Name = "Периферия", ImageUrl = "https://www.speedcomputers.biz/wa-data/public/shop/products/82/15/211582/images/403793/403793.512x0@2x.jpg"},
+            new Category { Name = "Спорт", ImageUrl = "https://zapernik.com/wp-content/uploads/2021/04/sports.jpg"},
         };
 
         return categories;

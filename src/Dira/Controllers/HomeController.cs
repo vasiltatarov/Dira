@@ -13,7 +13,7 @@ public class HomeController : Controller
     {
         var categories = this.dbContext
             .Categories
-            .Where(x => !x.IsDeleted)
+            .Where(x => !x.IsDeleted && x.ParentCategory == null)
             .Select(x => new CategoryViewModel
             {
                 Name = x.Name,
