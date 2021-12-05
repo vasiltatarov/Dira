@@ -9,17 +9,22 @@ public class ProductsController : Controller
         this.categoryService = categoryService;
     }
 
-    public IActionResult ProductsByCategory(int categoryId, string categoryName)
+    public IActionResult ProductsByCategory(
+        int categoryId,
+        string categoryName,
+        int? subCategoryId = null,
+        string? subCategoryName = null)
     {
-        // get subcategories by base category id
-        // get products by categories
+        ViewData["Title"] = subCategoryName != null
+            ? subCategoryName + " - " + categoryName
+            : categoryName;
 
         var subCategories = this.categoryService.GetSubCategoriesByBaseCategoryId(categoryId);
 
-        ViewData["Title"] = categoryName;
-
         var model = new ProductsViewModel
         {
+            CategoryId = categoryId,
+            CategoryName = categoryName,
             SubCategories = subCategories,
         };
 

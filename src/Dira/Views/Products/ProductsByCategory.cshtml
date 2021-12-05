@@ -6,13 +6,29 @@
 <div class="row">
     <div class="col-md-2 col-lg-2 col-sm-12">
         <div class="list-group">
+            <a class="list-group-item list-group-item-action active"
+               asp-action="ProductsByCategory"
+               asp-controller="Products"
+               asp-route-categoryId="@Model.CategoryId"
+               asp-route-categoryName="@Model.CategoryName">
+                Всички
+            </a>
             @foreach (var item in Model.SubCategories)
             {
-                <a href="#" class="list-group-item list-group-item-action">@item.Name</a>
+                <a class="list-group-item list-group-item-action"
+               asp-action="ProductsByCategory"
+               asp-controller="Products"
+               asp-route-categoryId="@Model.CategoryId"
+               asp-route-categoryName="@Model.CategoryName"
+               asp-route-subCategoryId="@item.Id"
+               asp-route-subCategoryName="@item.Name">
+                    @item.Name
+                </a>
             }
         </div>
     </div>
-    <div class="col-md-10 col-lg-10 col-sm-12">
+    <div class="vr"></div>
+    <div class="col-md-9 col-lg-9 col-sm-12">
         <div class="row row-cols-1 row-cols-md-5 g-4">
             @foreach (var item in Model.SubCategories)
             {
