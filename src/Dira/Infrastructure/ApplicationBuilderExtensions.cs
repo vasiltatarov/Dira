@@ -14,7 +14,25 @@ public static class ApplicationBuilderExtensions
 
         SeedCategories(services);
 
+        SeedProducts(services);
+
         return app;
+    }
+
+    private static void SeedProducts(IServiceProvider services)
+    {
+        var db = services.GetRequiredService<DiraDbContext>();
+
+        if (db.Products.Any())
+        {
+            return;
+        }
+
+        var productSeeder = new ProductsSeeder();
+        var products = productSeeder.GetProducts();
+
+        db.Products.AddRange(products);
+        db.SaveChanges();
     }
 
     private static void SeedCategories(IServiceProvider services)
