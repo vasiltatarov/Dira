@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Dira.ViewModels\Dira.ViewModels.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Products\" />
-  </ItemGroup>
-
 </Project>

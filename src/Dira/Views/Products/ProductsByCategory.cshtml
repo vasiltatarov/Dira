@@ -1,0 +1,30 @@
+﻿@model ProductsViewModel
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-2 col-lg-2 col-sm-12">
+        <div class="list-group">
+            @foreach (var item in Model.SubCategories)
+            {
+                <a href="#" class="list-group-item list-group-item-action">@item.Name</a>
+            }
+        </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-sm-12">
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+            @foreach (var item in Model.SubCategories)
+            {
+                <div class="col">
+                    <div class="card">
+                        <img src="@item.ImageUrl" class="card-img-top card-height card-border p-2" alt="@item.ImageUrl">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
