@@ -2,5 +2,5 @@
 
 public interface ICategoryService
 {
-    IEnumerable<CategoryViewModel> GetCategories();
+    IEnumerable<CategoryModelDto> GetCategories();
 }

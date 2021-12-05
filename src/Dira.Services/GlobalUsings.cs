@@ -1,3 +1,3 @@
-﻿global using System.Collections.Generic;
-global using Dira.ViewModels.Home;
-global using Dira.Data;
+﻿global using Dira.Data;
+global using Dira.Services.Categories.Models;
+

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dira.Data\Dira.Data.csproj" />
-    <ProjectReference Include="..\Dira.ViewModels\Dira.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

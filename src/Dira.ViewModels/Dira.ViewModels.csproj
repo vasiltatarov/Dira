@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Dira.Services\Dira.Services.csproj" />
+  </ItemGroup>
+
 </Project>

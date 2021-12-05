@@ -9,13 +9,14 @@ public class CategoryService : ICategoryService
         this.dbContext = dbContext;
     }
 
-    public IEnumerable<CategoryViewModel> GetCategories()
+    public IEnumerable<CategoryModelDto> GetCategories()
     {
         var categories = this.dbContext
             .Categories
             .Where(x => !x.IsDeleted && x.ParentCategoryId == null)
-            .Select(x => new CategoryViewModel
+            .Select(x => new CategoryModelDto
             {
+                Id = x.Id,
                 ImageUrl = x.ImageUrl,
                 Name = x.Name,
             })
