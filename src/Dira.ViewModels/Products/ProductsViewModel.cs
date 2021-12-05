@@ -7,4 +7,6 @@ public class ProductsViewModel
     public string CategoryName { get; set; }
 
     public IEnumerable<CategoryModelDto> SubCategories { get; set; }
+
+    public IEnumerable<ProductModelDto> Products { get; set; }
 }
