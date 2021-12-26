@@ -1,6 +1,6 @@
 ﻿namespace Dira.Data;
 
-public class DiraDbContext : IdentityDbContext
+public class DiraDbContext : IdentityDbContext<IdentityUser>
 {
     public DiraDbContext(DbContextOptions<DiraDbContext> options)
         : base(options)

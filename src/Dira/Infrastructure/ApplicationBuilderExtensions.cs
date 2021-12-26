@@ -1,6 +1,6 @@
 ﻿namespace Dira.Infrastructure;
 
-using Dira.Infrastructure.Seeder;
+using static WebConstants;
 
 public static class ApplicationBuilderExtensions
 {
@@ -12,11 +12,42 @@ public static class ApplicationBuilderExtensions
 
         MigrateDatabase(services);
 
-        SeedCategories(services);
+        SeedAdministratorAndRole(services);
 
+        SeedCategories(services);
         SeedProducts(services);
 
         return app;
+    }
+
+    private static void SeedAdministratorAndRole(IServiceProvider services)
+    {
+        var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+
+        if (userManager.FindByEmailAsync(AdministratorEmail).Result != null)
+        {
+            return;
+        }
+
+        var user = new IdentityUser
+        {
+            UserName = "Admin@gmail.com",
+            Email = AdministratorEmail,
+            EmailConfirmed = true,
+        };
+
+        var createUser = userManager.CreateAsync(user, AdministratorPassword).Result;
+
+        if (createUser.Succeeded)
+        {
+            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+            if (!roleManager.RoleExistsAsync(AdministratorRoleName).Result)
+            {
+                var role = roleManager.CreateAsync(new IdentityRole(AdministratorRoleName)).Result;
+                var userToRole = userManager.AddToRoleAsync(user, AdministratorRoleName).Result;
+            }
+        }
     }
 
     private static void SeedProducts(IServiceProvider services)

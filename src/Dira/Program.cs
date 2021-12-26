@@ -1,3 +1,5 @@
+using static Dira.WebConstants;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -15,7 +17,9 @@ builder.Services
         options.Password.RequireNonAlphanumeric = false;
         options.Password.RequireDigit = false;
     })
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<DiraDbContext>();
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddApplicationServices();
@@ -34,13 +38,12 @@ else
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthentication();
-app.UseAuthorization();
+app
+    .UseHttpsRedirection()
+    .UseStaticFiles()
+    .UseRouting()
+    .UseAuthentication()
+    .UseAuthorization();
 
 app.MapControllerRoute(
     "Products",                                           // Route name
@@ -50,6 +53,11 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapAreaControllerRoute(
+    name: "Areas",
+    areaName: AreaName,
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
 
