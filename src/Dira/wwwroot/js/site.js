@@ -17,6 +17,11 @@ for (var i = 0; i < cards.length; i++) {
     cards[i].addEventListener("mouseout", function (event) {
         // highlight the mouseout target
         var parent = event.target.parentNode;
+
+        if (parent.classList.contains('card-body')) {
+            parent = parent.parentNode;
+        }
+
         parent.style.backgroundColor = "";
     }, false);
 }
