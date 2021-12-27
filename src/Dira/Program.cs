@@ -45,6 +45,11 @@ app
     .UseAuthentication()
     .UseAuthorization();
 
+app.MapAreaControllerRoute(
+    name: "Areas",
+    areaName: AreaName,
+    pattern: "Administration/{controller=Home}/{action=Index}/{id?}");
+
 app.MapControllerRoute(
     "Products",                                           // Route name
     "Products/{categoryName}",                            // URL with parameters
@@ -53,11 +58,6 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapAreaControllerRoute(
-    name: "Areas",
-    areaName: AreaName,
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
 

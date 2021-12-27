@@ -31,6 +31,14 @@
                                 <i class="fas fa-user-shield"></i> Политика
                             </a>
                         </li>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole(AdministratorRoleName))
+                        {
+                            <li class="nav-item">
+                                <a id="privacy_nav" class="nav-link" asp-area="Administration" asp-controller="Home" asp-action="Index">
+                                    <i class="fas fa-user"></i> Администрация
+                                </a>
+                            </li>
+                        }
                         <form class="d-flex">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-secondary" type="submit">
